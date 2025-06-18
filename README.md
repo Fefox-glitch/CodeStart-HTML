@@ -1,146 +1,118 @@
-# 🚀 CodeStart — Plataforma Educativa de Programación
+# CodeStart App
 
-[![React](https://img.shields.io/badge/frontend-react-blue?logo=react)](https://react.dev)
-[![TailwindCSS](https://img.shields.io/badge/styling-tailwindcss-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
-[![Node.js](https://img.shields.io/badge/backend-node.js-339933?logo=node.js)](https://nodejs.org)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+Una aplicación educativa moderna para gestionar módulos de aprendizaje, construida con React y Node.js.
 
-**CodeStart** es una plataforma educativa creada para guiar a personas en su iniciación al mundo de la programación. Ofrece una interfaz moderna, limpia y responsiva, que permite explorar contenidos modulares y agregar nuevos fácilmente. Es una aplicación **full stack** construida con **React**, **Tailwind CSS**, **Node.js**, **Express** y **MongoDB**.
+## Mejoras Recientes
 
----
+### Frontend
+- 🎨 UI/UX mejorada con Tailwind CSS
+  - Diseño moderno y responsive
+  - Animaciones suaves y transiciones
+  - Mejor experiencia de usuario en formularios
+  - Componentes reutilizables y consistentes
 
-## ✨ Características clave
+- ⚡ Mejoras en Componentes
+  - ModuleCard: Nuevo diseño con efectos hover y PropTypes
+  - ModulesPage: Hero section mejorado y estados de carga
+  - ModuleDetailPage: Visualización mejorada de ejemplos de código con función de copiado
+  - CreateModulePage: Validación de formularios y mejor manejo de errores
 
-- ⚛️ **Frontend moderno** con React y Tailwind CSS
-- 🌐 **API RESTful** con Node.js, Express y MongoDB
-- 📚 **Gestión de módulos educativos**:
-  - Visualización general de módulos
-  - Vista detallada de un módulo
-  - Creación de nuevos módulos con formulario
-- 🔁 **Arquitectura frontend/backend desacoplada**
-- ❗ **Manejo de errores y estados de carga eficiente**
-- 📦 **Estructura de carpetas organizada**
-- 📄 **Documentación técnica clara y extensa**
+### Backend
+- 🔒 Mejor Manejo de Errores
+  - Validación robusta en controladores
+  - Mensajes de error descriptivos
+  - Logging mejorado para debugging
 
----
+- 📝 Documentación
+  - Comentarios JSDoc en todas las funciones
+  - Documentación de rutas API
+  - Mejor organización del código
 
-## 📁 Estructura del proyecto
+### Características Principales
+- ✨ Listado de módulos educativos
+- 📚 Vista detallada de módulos
+- ➕ Creación de nuevos módulos
+- 🎯 Niveles de dificultad
+- 💻 Soporte para ejemplos de código
 
-```
-codestart/
-├── backend/              # API REST - Node.js/Express
-│   ├── controllers/
-│   │   └── moduleController.js
-│   ├── models/
-│   │   └── Module.js
-│   ├── routes/
-│   │   └── moduleRoutes.js
-│   └── server.js
-└── frontend/             # Interfaz - React/Tailwind
-    ├── src/
-    │   ├── components/
-    │   │   └── ModuleCard.jsx
-    │   ├── pages/
-    │   │   ├── ModulesPage.jsx
-    │   │   ├── ModuleDetailPage.jsx
-    │   │   └── CreateModulePage.jsx
-    │   ├── services/
-    │   │   └── moduleService.js
-    │   └── App.jsx
-```
+## Tecnologías
 
----
+### Frontend
+- React
+- Tailwind CSS
+- React Router
+- Axios
 
-## 🔌 Endpoints de la API
+### Backend
+- Node.js
+- Express
+- CORS
+- Sistema de base de datos en memoria
 
-### `GET /api/modules`
-- Retorna todos los módulos disponibles.
-- Respuesta: Array de objetos módulo.
+## Instalación
 
-### `GET /api/modules/:id`
-- Retorna un módulo específico por su ID.
-- Respuesta: Objeto del módulo.
+1. Clonar el repositorio:
+\`\`\`bash
+git clone [url-del-repositorio]
+\`\`\`
 
-### `POST /api/modules`
-- Crea un nuevo módulo.
-- Body:
-```json
-{
-  "title": "Título del módulo",
-  "description": "Descripción del módulo",
-  "content": "Contenido detallado",
-  "codeSamples": ["ejemplo1", "ejemplo2"],
-  "level": "Principiante"
-}
-```
-
----
-
-## ⚙️ Instalación y ejecución local
-
-### Requisitos:
-- Node.js y npm instalados
-- MongoDB local o en la nube
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/Fefox-glitch/CodeStart.git
-cd codestart
-```
-
-### 2. Configurar Backend
-
-```bash
-cd backend
+2. Instalar dependencias del backend:
+\`\`\`bash
+cd codestart-app/backend
 npm install
-npm run dev
-```
+\`\`\`
 
-> Servidor backend corriendo en `http://localhost:3000`
-
-### 3. Configurar Frontend
-
-```bash
+3. Instalar dependencias del frontend:
+\`\`\`bash
 cd ../frontend
 npm install
-npm run dev
-```
+\`\`\`
 
-> Interfaz disponible en `http://localhost:5173`
+## Uso
 
----
+1. Iniciar el backend:
+\`\`\`bash
+cd backend
+npm start
+\`\`\`
 
-## 🧪 Próximas mejoras
+2. Iniciar el frontend:
+\`\`\`bash
+cd frontend
+npm start
+\`\`\`
 
-- 🔐 Autenticación de usuarios (JWT o Firebase)
-- 🧪 Pruebas unitarias e integración
-- 📈 Seguimiento de progreso por usuario
-- ☁️ Despliegue automático en Vercel (frontend) y Render (backend)
+3. Abrir http://localhost:3000 en el navegador
 
----
+## API Endpoints
 
-## 🤝 Contribución
+- GET /api/modules - Obtener todos los módulos
+- GET /api/modules/:id - Obtener un módulo específico
+- POST /api/modules - Crear un nuevo módulo
+- PUT /api/modules/:id - Actualizar un módulo
+- DELETE /api/modules/:id - Eliminar un módulo
 
-¡Las contribuciones son bienvenidas!
+## Estructura del Proyecto
 
-1. Haz un fork del proyecto
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva funcionalidad'`)
-4. Haz push a tu rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+\`\`\`
+codestart-app/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── App.jsx
+│   └── package.json
+└── backend/
+    ├── controllers/
+    ├── routes/
+    ├── db/
+    └── index.js
+\`\`\`
 
----
+## Contribuir
 
-## 👨‍💻 Autor
-
-**Fernando Troncoso Ortiz**  
-Desarrollador Full Stack | Santiago, Chile  
-📧 [fernandotroncoso.ortiz@gmail.com](mailto:fernandotroncoso.ortiz@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/fernando-troncoso-ortiz)
-
----
-
-## 📄 Licencia
-
-Distribuido bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más información.
+1. Fork el proyecto
+2. Crear una rama para tu feature (\`git checkout -b feature/AmazingFeature\`)
+3. Commit tus cambios (\`git commit -m 'Add some AmazingFeature'\`)
+4. Push a la rama (\`git push origin feature/AmazingFeature\`)
+5. Abrir un Pull Request
