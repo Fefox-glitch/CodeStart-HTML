@@ -1,4 +1,3 @@
-
 # 🚀 CodeStart — Plataforma Educativa de Programación
 
 [![React](https://img.shields.io/badge/frontend-react-blue?logo=react)](https://react.dev)
@@ -6,22 +5,22 @@
 [![Node.js](https://img.shields.io/badge/backend-node.js-339933?logo=node.js)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**CodeStart** es una plataforma educativa construida para guiar a principiantes en su aprendizaje de programación. Combina una arquitectura full stack moderna con diseño limpio y responsivo, ofreciendo una experiencia sólida para explorar contenidos educativos modulares.
+**CodeStart** es una plataforma educativa creada para guiar a personas en su iniciación al mundo de la programación. Ofrece una interfaz moderna, limpia y responsiva, que permite explorar contenidos modulares y agregar nuevos fácilmente. Es una aplicación **full stack** construida con **React**, **Tailwind CSS**, **Node.js**, **Express** y **MongoDB**.
 
 ---
 
 ## ✨ Características clave
 
-- ⚛️ **Interfaz moderna y adaptable** con React + Tailwind CSS
-- 🔁 **Frontend y backend separados** para mejor mantenimiento y escalabilidad
+- ⚛️ **Frontend moderno** con React y Tailwind CSS
+- 🌐 **API RESTful** con Node.js, Express y MongoDB
 - 📚 **Gestión de módulos educativos**:
-  - Visualización de todos los módulos
-  - Vista detallada de cada módulo
-  - Formulario para crear nuevos módulos
-- 🌐 **API RESTful** construida con Node.js y Express
-- ❗ **Manejo eficiente de errores y estados de carga**
-- 📂 **Estructura limpia** del proyecto
-- 📄 **Documentación clara y completa en README**
+  - Visualización general de módulos
+  - Vista detallada de un módulo
+  - Creación de nuevos módulos con formulario
+- 🔁 **Arquitectura frontend/backend desacoplada**
+- ❗ **Manejo de errores y estados de carga eficiente**
+- 📦 **Estructura de carpetas organizada**
+- 📄 **Documentación técnica clara y extensa**
 
 ---
 
@@ -31,22 +30,66 @@
 codestart/
 ├── backend/              # API REST - Node.js/Express
 │   ├── controllers/
+│   │   └── moduleController.js
 │   ├── models/
+│   │   └── Module.js
 │   ├── routes/
+│   │   └── moduleRoutes.js
 │   └── server.js
 └── frontend/             # Interfaz - React/Tailwind
     ├── src/
     │   ├── components/
+    │   │   └── ModuleCard.jsx
     │   ├── pages/
+    │   │   ├── ModulesPage.jsx
+    │   │   ├── ModuleDetailPage.jsx
+    │   │   └── CreateModulePage.jsx
     │   ├── services/
+    │   │   └── moduleService.js
     │   └── App.jsx
 ```
 
 ---
 
-## 🚀 Instalación y ejecución
+## 🔌 Endpoints de la API
 
-### 1. Backend
+### `GET /api/modules`
+- Retorna todos los módulos disponibles.
+- Respuesta: Array de objetos módulo.
+
+### `GET /api/modules/:id`
+- Retorna un módulo específico por su ID.
+- Respuesta: Objeto del módulo.
+
+### `POST /api/modules`
+- Crea un nuevo módulo.
+- Body:
+```json
+{
+  "title": "Título del módulo",
+  "description": "Descripción del módulo",
+  "content": "Contenido detallado",
+  "codeSamples": ["ejemplo1", "ejemplo2"],
+  "level": "Principiante"
+}
+```
+
+---
+
+## ⚙️ Instalación y ejecución local
+
+### Requisitos:
+- Node.js y npm instalados
+- MongoDB local o en la nube
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/Fefox-glitch/CodeStart.git
+cd codestart
+```
+
+### 2. Configurar Backend
 
 ```bash
 cd backend
@@ -54,25 +97,38 @@ npm install
 npm run dev
 ```
 
-### 2. Frontend
+> Servidor backend corriendo en `http://localhost:3000`
+
+### 3. Configurar Frontend
 
 ```bash
-cd frontend
+cd ../frontend
 npm install
 npm run dev
 ```
 
-- Frontend: `http://localhost:5173`
-- API Backend: `http://localhost:3000/api/modules`
+> Interfaz disponible en `http://localhost:5173`
 
 ---
 
-## 📌 Próximas mejoras
+## 🧪 Próximas mejoras
 
 - 🔐 Autenticación de usuarios (JWT o Firebase)
 - 🧪 Pruebas unitarias e integración
-- 📈 Seguimiento del progreso del usuario
-- ☁️ Despliegue en Vercel (frontend) y Render (backend)
+- 📈 Seguimiento de progreso por usuario
+- ☁️ Despliegue automático en Vercel (frontend) y Render (backend)
+
+---
+
+## 🤝 Contribución
+
+¡Las contribuciones son bienvenidas!
+
+1. Haz un fork del proyecto
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva funcionalidad'`)
+4. Haz push a tu rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
 
 ---
 
@@ -87,4 +143,4 @@ Desarrollador Full Stack | Santiago, Chile
 
 ## 📄 Licencia
 
-Distribuido bajo licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más información.
+Distribuido bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más información.
