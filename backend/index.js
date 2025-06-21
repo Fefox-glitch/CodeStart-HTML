@@ -1,17 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const moduleRoutes = require('./routes/moduleRoutes');
+const authRoutes = require('./routes/authRoutes');
+const connectDB = require('./db/db');
+const { protect } = require('./middleware/authMiddleware');
 
 /**
  * Express application setup with middleware and route configuration
  */
 const app = express();
 
+// Connect to MongoDB
+connectDB();
+
 // Middleware
 app.use(cors({
   origin: 'http://localhost:3000', // Allow frontend requests
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
@@ -23,7 +29,8 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/modules', moduleRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/modules', protect, moduleRoutes);
 
 // 404 handler
 app.use((req, res) => {
