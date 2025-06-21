@@ -6,6 +6,7 @@ import ModuleDetailPage from "./pages/ModuleDetailPage";
 import CreateModulePage from "./pages/CreateModulePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import HomePage from "./pages/HomePage";
 
 /**
  * Main App component that handles routing
@@ -19,18 +20,11 @@ const App = () => {
         <div className="min-h-screen bg-gray-50">
           <Routes>
             {/* Public Routes */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
 
             {/* Protected Routes */}
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <Navigate to="/modules" replace />
-                </ProtectedRoute>
-              }
-            />
             <Route
               path="/modules"
               element={
